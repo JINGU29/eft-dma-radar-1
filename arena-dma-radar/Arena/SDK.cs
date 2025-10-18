@@ -24,7 +24,7 @@ namespace SDK
 		public readonly partial struct AmmoTemplate
 		{
 			public const uint ClassName_ClassToken = 0x200335C; // MDToken
-			public const uint MethodName_MethodToken = 0x60138C4; // MDToken
+			public const uint MethodName_MethodToken = 0x60138D4; // MDToken
 			public const string ClassName = @"\uF148";
 			public const string MethodName = @"get_LoadUnloadModifier";
 		}
@@ -32,7 +32,7 @@ namespace SDK
 		public readonly partial struct NoMalfunctions
 		{
 			public const uint ClassName_ClassToken = 0x2001B59; // MDToken
-			public const uint GetMalfunctionState_MethodToken = 0x600AB19; // MDToken
+			public const uint GetMalfunctionState_MethodToken = 0x600AB1E; // MDToken
 			public const string ClassName = @"EFT.Player+FirearmController";
 			public const string GetMalfunctionState = @"GetMalfunctionState";
 		}
@@ -57,14 +57,14 @@ namespace SDK
 
 		public readonly partial struct GridItemView
 		{
-			public const uint MethodName_MethodToken = 0x6016F7E; // MDToken
+			public const uint MethodName_MethodToken = 0x6016F91; // MDToken
 			public const string MethodName = @"\uE012";
 		}
 
 		public readonly partial struct ProceduralWeaponAnimation
 		{
 			public const uint ClassName_ClassToken = 0x2002825; // MDToken
-			public const uint MethodName_MethodToken = 0x600F8EE; // MDToken
+			public const uint MethodName_MethodToken = 0x600F8FE; // MDToken
 			public const string ClassName = @"EFT.Animations.ProceduralWeaponAnimation";
 			public const string MethodName = @"get_ShotNeedsFovAdjustments";
 		}
@@ -72,7 +72,7 @@ namespace SDK
 		public readonly partial struct MovementContext
 		{
 			public const uint ClassName_ClassToken = 0x2001D75; // MDToken
-			public const uint MethodName_MethodToken = 0x600BAE7; // MDToken
+			public const uint MethodName_MethodToken = 0x600BAED; // MDToken
 			public const string ClassName = @"EFT.MovementContext";
 			public const string MethodName = @"SetPhysicalCondition";
 		}
@@ -88,7 +88,7 @@ namespace SDK
 		public readonly partial struct FovChanger
 		{
 			public const uint ClassName_ClassToken = 0x2003169; // MDToken
-			public const uint MethodName_MethodToken = 0x6012D35; // MDToken
+			public const uint MethodName_MethodToken = 0x6012D45; // MDToken
 			public const string ClassName = @"\uF068";
 			public const string MethodName = @"SetFov";
 		}
@@ -96,7 +96,7 @@ namespace SDK
 		public readonly partial struct VitalParts
 		{
 			public const uint ClassName_ClassToken = 0x2003301; // MDToken
-			public const uint MethodName_MethodToken = 0x601367A; // MDToken
+			public const uint MethodName_MethodToken = 0x601368A; // MDToken
 			public const string ClassName = @"EFT.InventoryLogic.CompoundItem";
 			public const string MethodName = @"\uE007";
 		}
@@ -104,7 +104,7 @@ namespace SDK
 		public readonly partial struct InventoryLogic_Mod
 		{
 			public const uint ClassName_ClassToken = 0x2003378; // MDToken
-			public const uint MethodName_MethodToken = 0x601395E; // MDToken
+			public const uint MethodName_MethodToken = 0x601396E; // MDToken
 			public const string ClassName = @"EFT.InventoryLogic.Mod";
 			public const string MethodName = @"get_RaidModdable";
 		}
@@ -154,17 +154,17 @@ namespace SDK
 
 		public readonly partial struct EFTHardSettings
 		{
-			public const uint DecelerationSpeed = 0x1A0; // Single
-			public const uint AIR_CONTROL_SAME_DIR = 0x248; // Single
-			public const uint AIR_CONTROL_NONE_OR_ORT_DIR = 0x250; // Single
-			public const uint LOOT_RAYCAST_DISTANCE = 0x26C; // Single
-			public const uint DOOR_RAYCAST_DISTANCE = 0x274; // Single
-			public const uint STOP_AIMING_AT = 0x2C8; // Single
-			public const uint WEAPON_OCCLUSION_LAYERS = 0x2E8; // UnityEngine.LayerMask
-			public const uint MOUSE_LOOK_HORIZONTAL_LIMIT = 0x3BC; // UnityEngine.Vector2
-			public const uint MOUSE_LOOK_VERTICAL_LIMIT = 0x3C4; // UnityEngine.Vector2
-			public const uint POSE_CHANGING_SPEED = 0x3F0; // Single
-			public const uint MED_EFFECT_USING_PANEL = 0x40C; // Boolean
+			public const uint DecelerationSpeed = 0x1A8; // Single
+			public const uint AIR_CONTROL_SAME_DIR = 0x250; // Single
+			public const uint AIR_CONTROL_NONE_OR_ORT_DIR = 0x258; // Single
+			public const uint LOOT_RAYCAST_DISTANCE = 0x274; // Single
+			public const uint DOOR_RAYCAST_DISTANCE = 0x27C; // Single
+			public const uint STOP_AIMING_AT = 0x2D0; // Single
+			public const uint WEAPON_OCCLUSION_LAYERS = 0x2F0; // UnityEngine.LayerMask
+			public const uint MOUSE_LOOK_HORIZONTAL_LIMIT = 0x3C4; // UnityEngine.Vector2
+			public const uint MOUSE_LOOK_VERTICAL_LIMIT = 0x3CC; // UnityEngine.Vector2
+			public const uint POSE_CHANGING_SPEED = 0x3F8; // Single
+			public const uint MED_EFFECT_USING_PANEL = 0x414; // Boolean
 		}
 
 		public readonly partial struct GlobalConfigs
@@ -417,18 +417,18 @@ namespace SDK
 		public readonly partial struct MovementContext
 		{
 			public const uint Player = 0x10; // EFT.Player
-			public const uint CurrentState = 0xE0; // EFT.BaseMovementState
-			public const uint _states = 0x1E0; // System.Collections.Generic.Dictionary<Byte, BaseMovementState>
-			public const uint _movementStates = 0x200; // -.IPlayerStateContainerBehaviour[]
-			public const uint _tilt = 0x268; // Single
-			public const uint _rotation = 0x27C; // UnityEngine.Vector2
-			public const uint _physicalCondition = 0x300; // System.Int32
-			public const uint _speedLimitIsDirty = 0x305; // Boolean
-			public const uint StateSpeedLimit = 0x308; // Single
-			public const uint StateSprintSpeedLimit = 0x30C; // Single
-			public const uint _lookDirection = 0x424; // UnityEngine.Vector3
-			public const uint WalkInertia = 0x4BC; // Single
-			public const uint SprintBrakeInertia = 0x4C0; // Single
+			public const uint CurrentState = 0xE8; // EFT.BaseMovementState
+			public const uint _states = 0x1E8; // System.Collections.Generic.Dictionary<Byte, BaseMovementState>
+			public const uint _movementStates = 0x208; // -.IPlayerStateContainerBehaviour[]
+			public const uint _tilt = 0x270; // Single
+			public const uint _rotation = 0x290; // UnityEngine.Vector2
+			public const uint _physicalCondition = 0x314; // System.Int32
+			public const uint _speedLimitIsDirty = 0x319; // Boolean
+			public const uint StateSpeedLimit = 0x31C; // Single
+			public const uint StateSprintSpeedLimit = 0x320; // Single
+			public const uint _lookDirection = 0x440; // UnityEngine.Vector3
+			public const uint WalkInertia = 0x4DC; // Single
+			public const uint SprintBrakeInertia = 0x4E0; // Single
 		}
 
 		public readonly partial struct MovementState
