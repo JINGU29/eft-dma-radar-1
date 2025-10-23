@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Text="ESP Settings" Style="{StaticResource PanelHeaderText}"/>
+                <TextBlock Text="透视设置" Style="{StaticResource PanelHeaderText}"/>
 
                 <!-- Close button -->
                 <Border Grid.Column="1" Style="{StaticResource CloseButtonBorder}">
@@ -42,19 +42,19 @@
                           BorderThickness="0">
 
                 <!-- Chams Tab -->
-                <hc:TabItem Header="Chams">
+                <hc:TabItem Header="着色">
                     <ScrollViewer Style="{StaticResource PanelScrollViewer}">
                         <hc:SimpleStackPanel>
                             <!-- General Settings Section -->
-                            <Expander x:Name="expChamsGeneralSettings" Header="General Settings" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                            <Expander x:Name="expChamsGeneralSettings" Header="通用设置" Style="{StaticResource PanelExpander}" IsExpanded="True">
                                 <hc:SimpleStackPanel Style="{StaticResource ExpanderContent}" Margin="2,8,2,0">
                                     <!-- Enable Chams -->
-                                    <CheckBox x:Name="chkEnableChams" Content="Enable Chams" 
+                                    <CheckBox x:Name="chkEnableChams" Content="启用着色" 
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Margin="0,0,0,15" Tag="EnableChams"/>
 
                                     <!-- Chams Material Management -->
-                                    <GroupBox Header="Material Management" Style="{StaticResource TransparentGroupBoxStyle}"
+                                    <GroupBox Header="材质管理" Style="{StaticResource TransparentGroupBoxStyle}"
                                               Padding="5,0,5,5" Margin="0,0,0,8">
                                         <hc:SimpleStackPanel Margin="0,5,0,0">
                                             <Grid Margin="0,0,0,8">
@@ -65,21 +65,21 @@
                                                 </Grid.ColumnDefinitions>
 
                                                 <TextBlock Grid.Column="0" Margin="0,0,0,0"
-                                                           Text="Materials Status:"
+                                                           Text="材质状态:"
                                                            Style="{StaticResource LabelText}"
                                                            FontSize="14"
                                                            VerticalAlignment="Center"/>
 
                                                 <TextBlock x:Name="txtChamsMaterialStatus" 
                                                            Grid.Column="1" Margin="4,0,0,0"
-                                                           Text="Unknown" 
+                                                           Text="未知" 
                                                            Style="{StaticResource LabelText}"
                                                            FontSize="14"
                                                            VerticalAlignment="Center"/>
 
                                                 <TextBlock x:Name="txtChamsMaterialCount" 
                                                            Grid.Column="2" Margin="0,0,0,0"
-                                                           Text="0/0 loaded" 
+                                                           Text="已加载 0/0" 
                                                            Style="{StaticResource LabelText}"
                                                            FontSize="14"
                                                            VerticalAlignment="Center"/>
@@ -94,18 +94,18 @@
 
                                                 <Button x:Name="btnRefreshChamsMaterials" 
                                                         Grid.Column="0"
-                                                        Content="🔄 Refresh Materials" 
+                                                        Content="🔄 刷新材质" 
                                                         Style="{StaticResource ButtonWarning}"
                                                         HorizontalAlignment="Stretch"
-                                                        ToolTip="Force refresh all chams materials. Use if materials failed to load properly."
+                                                        ToolTip="强制刷新所有着色材质。如果材质加载失败，请使用此选项。"
                                                         Tag="RefreshChamsMaterials"/>
 
                                                 <Button x:Name="btnClearChamsCache" 
                                                         Grid.Column="2"
-                                                        Content="🗑️ Clear Cache" 
+                                                        Content="🗑️ 清除缓存" 
                                                         Style="{StaticResource ButtonDanger}"
                                                         HorizontalAlignment="Stretch"
-                                                        ToolTip="Clear chams material cache and force full reload on next refresh."
+                                                        ToolTip="清除着色材质缓存并在下次刷新时强制完全重新加载。"
                                                         Tag="ClearChamsCache"/>
                                             </Grid>
 
@@ -118,10 +118,10 @@
                                                            TextAlignment="Center"
                                                            VerticalAlignment="Center">
                                                            <Run Text="⚠" FontSize="16" />
-                                                           <Run Text="Advanced Material Types"/>
-                                                           <Run Text="(WireFrame, VisCheck Glow, VisCheck Flat)" FontWeight="Bold"/>
-                                                           <Run Text="require"/>
-                                                           <Run Text="Advanced Memory Writes" FontWeight="Bold" Foreground="Orange"/>
+                                                           <Run Text="高级材质类型"/>
+                                                           <Run Text="(线框、可见性检查发光、可见性检查平面)" FontWeight="Bold"/>
+                                                           <Run Text="需要"/>
+                                                           <Run Text="高级内存写入" FontWeight="Bold" Foreground="Orange"/>
                                                 </TextBlock>
                                             </hc:SimpleStackPanel>
                                         </hc:SimpleStackPanel>
@@ -130,7 +130,7 @@
                             </Expander>
 
                             <!-- Entity Settings Section -->
-                            <Expander x:Name="expChamsEntitySettings" Header="Entity Settings" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                            <Expander x:Name="expChamsEntitySettings" Header="实体设置" Style="{StaticResource PanelExpander}" IsExpanded="True">
                                 <hc:SimpleStackPanel Style="{StaticResource ExpanderContent}" Margin="2,8,2,0">
                                     <!-- Entity Type Selection -->
                                     <Grid Margin="0,0,0,10">
@@ -139,25 +139,25 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <TextBlock Text="Entity Type" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="实体类型" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
 
                                         <hc:ComboBox x:Name="cboChamsEntityType" Grid.Column="1">
                                             <ComboBoxItem Content="AI" Tag="AI"/>
-                                            <ComboBoxItem Content="Aimbot Target" Tag="AimbotTarget"/>
+                                            <ComboBoxItem Content="自瞄目标" Tag="AimbotTarget"/>
                                             <ComboBoxItem Content="Boss" Tag="Boss"/>
-                                            <ComboBoxItem Content="Player Scav" Tag="PlayerScav"/>
+                                            <ComboBoxItem Content="玩家Scav" Tag="PlayerScav"/>
                                             <ComboBoxItem Content="PMC" Tag="PMC"/>
-                                            <ComboBoxItem Content="Raider/Rogue/Guard" Tag="Guard"/>
-                                            <ComboBoxItem Content="Teammate" Tag="Teammate"/>
-                                            <ComboBoxItem Content="Containers" Tag="Container"/>
-                                            <ComboBoxItem Content="Important Items" Tag="ImportantItem"/>
-                                            <ComboBoxItem Content="Quest Items" Tag="QuestItem"/>
+                                            <ComboBoxItem Content="掠夺者/Rogue/守卫" Tag="Guard"/>
+                                            <ComboBoxItem Content="队友" Tag="Teammate"/>
+                                            <ComboBoxItem Content="容器" Tag="Container"/>
+                                            <ComboBoxItem Content="重要物品" Tag="ImportantItem"/>
+                                            <ComboBoxItem Content="任务物品" Tag="QuestItem"/>
                                         </hc:ComboBox>
                                     </Grid>
 
                                     <!-- Entity Enabled Checkbox -->
-                                    <CheckBox x:Name="chkEntityEnabled" Content="Entity Chams" 
+                                    <CheckBox x:Name="chkEntityEnabled" Content="实体着色" 
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Margin="0,0,0,12" Tag="EntityEnabled"/>
 
@@ -168,20 +168,20 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <TextBlock Text="Material Type" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="材质类型" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
 
                                         <hc:ComboBox x:Name="cboMaterialType" Grid.Column="1" Tag="MaterialType">
-                                            <ComboBoxItem Content="Basic" Tag="Basic" IsSelected="True"/>
-                                            <ComboBoxItem Content="Visible" Tag="Visible"/>
-                                            <ComboBoxItem Content="WireFrame" Tag="WireFrame"/>
-                                            <ComboBoxItem Content="VisCheck Glow" Tag="VisCheckGlow"/>
-                                            <ComboBoxItem Content="VisCheck Flat" Tag="VisCheckFlat"/>
+                                            <ComboBoxItem Content="基础" Tag="Basic" IsSelected="True"/>
+                                            <ComboBoxItem Content="可见" Tag="Visible"/>
+                                            <ComboBoxItem Content="线框" Tag="WireFrame"/>
+                                            <ComboBoxItem Content="可见性检查发光" Tag="VisCheckGlow"/>
+                                            <ComboBoxItem Content="可见性检查平面" Tag="VisCheckFlat"/>
                                         </hc:ComboBox>
                                     </Grid>
 
                                     <!-- Player Entity Material Types -->
-                                    <GroupBox x:Name="playerEntityGroup" Header="Material Types" Style="{StaticResource TransparentGroupBoxStyle}"
+                                    <GroupBox x:Name="playerEntityGroup" Header="材质类型" Style="{StaticResource TransparentGroupBoxStyle}"
                                               Padding="5,0,5,5" Margin="0,0,0,12" Visibility="Collapsed">
                                         <hc:SimpleStackPanel Margin="0,5,0,0">
                                             <!-- Clothing Chams -->
@@ -191,17 +191,17 @@
                                                     <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <CheckBox x:Name="chkClothingChamsEnabled" Content="Clothing Chams" 
+                                                <CheckBox x:Name="chkClothingChamsEnabled" Content="服装着色" 
                                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                                           Grid.Column="0" Tag="ClothingChamsEnabled"
                                                           VerticalAlignment="Center"/>
 
                                                 <hc:ComboBox x:Name="cboClothingMaterialType" Grid.Column="1" Tag="ClothingMaterialType">
-                                                    <ComboBoxItem Content="Basic" Tag="Basic" IsSelected="True"/>
-                                                    <ComboBoxItem Content="Visible" Tag="Visible"/>
-                                                    <ComboBoxItem Content="WireFrame" Tag="WireFrame"/>
-                                                    <ComboBoxItem Content="VisCheck Glow" Tag="VisCheckGlow"/>
-                                                    <ComboBoxItem Content="VisCheck Flat" Tag="VisCheckFlat"/>
+                                                    <ComboBoxItem Content="基础" Tag="Basic" IsSelected="True"/>
+                                                    <ComboBoxItem Content="可见" Tag="Visible"/>
+                                                    <ComboBoxItem Content="线框" Tag="WireFrame"/>
+                                                    <ComboBoxItem Content="可见性检查发光" Tag="VisCheckGlow"/>
+                                                    <ComboBoxItem Content="可见性检查平面" Tag="VisCheckFlat"/>
                                                 </hc:ComboBox>
                                             </Grid>
 
@@ -212,17 +212,17 @@
                                                     <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <CheckBox x:Name="chkGearChamsEnabled" Content="Gear Chams" 
+                                                <CheckBox x:Name="chkGearChamsEnabled" Content="装备着色" 
                                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                                           Grid.Column="0" Tag="GearChamsEnabled"
                                                           VerticalAlignment="Center"/>
 
                                                 <hc:ComboBox x:Name="cboGearMaterialType" Grid.Column="1" Tag="GearMaterialType">
-                                                    <ComboBoxItem Content="Basic" Tag="Basic" IsSelected="True"/>
-                                                    <ComboBoxItem Content="Visible" Tag="Visible"/>
-                                                    <ComboBoxItem Content="WireFrame" Tag="WireFrame"/>
-                                                    <ComboBoxItem Content="VisCheck Glow" Tag="VisCheckGlow"/>
-                                                    <ComboBoxItem Content="VisCheck Flat" Tag="VisCheckFlat"/>
+                                                    <ComboBoxItem Content="基础" Tag="Basic" IsSelected="True"/>
+                                                    <ComboBoxItem Content="可见" Tag="Visible"/>
+                                                    <ComboBoxItem Content="线框" Tag="WireFrame"/>
+                                                    <ComboBoxItem Content="可见性检查发光" Tag="VisCheckGlow"/>
+                                                    <ComboBoxItem Content="可见性检查平面" Tag="VisCheckFlat"/>
                                                 </hc:ComboBox>
                                             </Grid>
 
@@ -233,17 +233,17 @@
                                                     <ColumnDefinition Width="*"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <CheckBox x:Name="chkDeathMaterialEnabled" Content="Death Material" 
+                                                <CheckBox x:Name="chkDeathMaterialEnabled" Content="死亡材质" 
                                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                                           Grid.Column="0" Tag="DeathMaterialEnabled"
                                                           VerticalAlignment="Center"/>
 
                                                 <hc:ComboBox x:Name="cboDeathMaterialType" Grid.Column="1" Tag="DeathMaterialType">
-                                                    <ComboBoxItem Content="Basic" Tag="Basic"/>
-                                                    <ComboBoxItem Content="Visible" Tag="Visible"/>
-                                                    <ComboBoxItem Content="WireFrame" Tag="WireFrame"/>
-                                                    <ComboBoxItem Content="VisCheck Glow" Tag="VisCheckGlow"/>
-                                                    <ComboBoxItem Content="VisCheck Flat" Tag="VisCheckFlat" IsSelected="True"/>
+                                                    <ComboBoxItem Content="基础" Tag="Basic"/>
+                                                    <ComboBoxItem Content="可见" Tag="Visible"/>
+                                                    <ComboBoxItem Content="线框" Tag="WireFrame"/>
+                                                    <ComboBoxItem Content="可见性检查发光" Tag="VisCheckGlow"/>
+                                                    <ComboBoxItem Content="可见性检查平面" Tag="VisCheckFlat" IsSelected="True"/>
                                                 </hc:ComboBox>
                                             </Grid>
                                         </hc:SimpleStackPanel>
@@ -309,19 +309,19 @@
                 </hc:TabItem>
 
                 <!-- Fuser Tab -->
-                <hc:TabItem Header="Fuser">
+                <hc:TabItem Header="热熔">
                     <ScrollViewer Style="{StaticResource PanelScrollViewer}">
                         <hc:SimpleStackPanel>
                             <!-- Fuser Settings Section -->
-                            <Expander x:Name="expFuserGeneralSettings" Header="General Settings" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                            <Expander x:Name="expFuserGeneralSettings" Header="通用设置" Style="{StaticResource PanelExpander}" IsExpanded="True">
                                 <hc:SimpleStackPanel Style="{StaticResource ExpanderContent}" Margin="2,8,2,0">
                                     <!-- Enable Fuser -->
-                                    <Button x:Name="btnStartESP" Content="Start ESP" Tag="StartESP"
+                                    <Button x:Name="btnStartESP" Content="启动透视" Tag="StartESP"
                                             HorizontalAlignment="Left" Margin="0,0,0,8"
                                                 Style="{StaticResource ButtonPrimary}"/>
 
                                     <!-- Auto Fullscreen Checkbox -->
-                                    <CheckBox x:Name="chkAutoFullscreen" Content="Auto Fullscreen" Tag="AutoFullscreen"
+                                    <CheckBox x:Name="chkAutoFullscreen" Content="自动全屏" Tag="AutoFullscreen"
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Margin="0,0,0,8"/>
 
@@ -331,7 +331,7 @@
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Text="FPS Cap" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="帧率上限" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
                                         <hc:NumericUpDown x:Name="nudFPSCap" Value="60" Minimum="30" Maximum="500"
                                                           Grid.Column="1" Width="80" HorizontalAlignment="Left" Tag="FPSCap"/>
@@ -343,7 +343,7 @@
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Text="Font Scale" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="字体缩放" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
                                         <controls:TextValueSlider
                                             x:Name="sldrFuserFontScale" Tag="FuserFontScale"
@@ -361,7 +361,7 @@
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Text="Line Scale" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="线条缩放" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
                                         <controls:TextValueSlider
                                                 x:Name="sldrFuserLineScale" Tag="FuserLineScale"
@@ -375,20 +375,20 @@
                                     <!-- Widgets -->
                                     <hc:CheckComboBox x:Name="ccbWidgets" Grid.Column="1" Margin="0,0,0,8"
                                                           Style="{StaticResource CheckComboBoxExtend}"
-                                                          hc:TitleElement.Title="Widgets"
+                                                          hc:TitleElement.Title="小工具"
                                                           hc:TitleElement.TitlePlacement="Top"
-                                                          hc:InfoElement.Placeholder="Quest Info Widget..."/>
+                                                          hc:InfoElement.Placeholder="任务信息小工具..."/>
 
                                     <hc:CheckComboBox x:Name="ccbESPOptions" Grid.Column="1" Margin="0,0,0,0"
                                                       Style="{StaticResource CheckComboBoxExtend}"
-                                                      hc:TitleElement.Title="Options"
+                                                      hc:TitleElement.Title="选项"
                                                       hc:TitleElement.TitlePlacement="Top"
-                                                      hc:InfoElement.Placeholder="Fireport Aim, Aimbot FOV, Status Text..."/>
+                                                      hc:InfoElement.Placeholder="瞄准端口、自瞄视野、状态文本..."/>
                                 </hc:SimpleStackPanel>
                             </Expander>
 
                             <!-- Crosshair Settings Section -->
-                            <Expander x:Name="expFuserCrosshairSettings" Header="Crosshair Settings" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                            <Expander x:Name="expFuserCrosshairSettings" Header="准星设置" Style="{StaticResource PanelExpander}" IsExpanded="True">
                                 <hc:SimpleStackPanel Style="{StaticResource ExpanderContent}" Margin="2,8,2,0">
                                     <Grid Margin="5">
                                         <Grid.RowDefinitions>
@@ -400,22 +400,22 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox x:Name="chkCrosshairEnabled" Content="Enable Crosshair" 
+                                        <CheckBox x:Name="chkCrosshairEnabled" Content="启用准星" 
                                                       Style="{StaticResource DynamicCheckBoxStyle}" 
                                                       Grid.Column="0" Margin="0,0,15,10" Tag="CrosshairEnabled"/>
 
                                         <hc:ComboBox x:Name="cboCrosshairType" Grid.Column="1" Tag="CrosshairType" Margin="0,0,0,10"
                                                          IsEnabled="{Binding ElementName=chkCrosshairEnabled, Path=IsChecked}">
-                                            <ComboBoxItem Content="Plus (+)" IsSelected="True"/>
-                                            <ComboBoxItem Content="Cross (X)"/>
-                                            <ComboBoxItem Content="Circle"/>
-                                            <ComboBoxItem Content="Dot"/>
-                                            <ComboBoxItem Content="Square"/>
-                                            <ComboBoxItem Content="Diamond"/>
+                                            <ComboBoxItem Content="十字 (+)" IsSelected="True"/>
+                                            <ComboBoxItem Content="交叉 (X)"/>
+                                            <ComboBoxItem Content="圆形"/>
+                                            <ComboBoxItem Content="点"/>
+                                            <ComboBoxItem Content="方形"/>
+                                            <ComboBoxItem Content="菱形"/>
                                         </hc:ComboBox>
 
                                         <!-- Crosshair Scale Slider -->
-                                        <TextBlock Text="Crosshair Scale" Style="{StaticResource LabelText}" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+                                        <TextBlock Text="准星缩放" Style="{StaticResource LabelText}" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
                                         <controls:TextValueSlider
                                                 x:Name="sldrFuserCrosshairScale" Tag="FuserCrosshairScale"
                                                 Minimum="0.5" Maximum="5"
@@ -428,7 +428,7 @@
                             </Expander>
 
                             <!-- Mini Radar Settings Section -->
-                            <Expander x:Name="expFuserMiniRadarSettings" Header="Mini Radar Settings" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                            <Expander x:Name="expFuserMiniRadarSettings" Header="迷你雷达设置" Style="{StaticResource PanelExpander}" IsExpanded="True">
                                 <hc:SimpleStackPanel Style="{StaticResource ExpanderContent}" Margin="2,8,2,0">
                                     <Grid Margin="5">
                                         <Grid.RowDefinitions>
@@ -441,16 +441,16 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox x:Name="chkMiniRadarEnabled" Content="Enable Mini Radar" 
+                                        <CheckBox x:Name="chkMiniRadarEnabled" Content="启用迷你雷达" 
                                                       Style="{StaticResource DynamicCheckBoxStyle}" 
                                                      Grid.Row="0" Grid.Column="0" Margin="0,0,0,8" Tag="MiniRadarEnabled"/>
 
-                                        <CheckBox x:Name="chkMiniRadarLoot" Content="Show Loot" 
+                                        <CheckBox x:Name="chkMiniRadarLoot" Content="显示战利品" 
                                                       Style="{StaticResource DynamicCheckBoxStyle}" 
                                                      Grid.Row="1" Grid.Column="0" Margin="0,0,0,10" Tag="MiniRadarLoot"/>
 
                                         <!-- Mini Radar Scale Slider -->
-                                        <TextBlock Text="Scale" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="缩放" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"/>
                                         <controls:TextValueSlider
                                                 x:Name="sldrFuserMiniRadarScale" Tag="FuserMiniRadarScale"
@@ -464,7 +464,7 @@
                             </Expander>
 
                             <!-- Player Information Expander -->
-                            <Expander x:Name="expFuserPlayerInformation" Header="Player Information" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                            <Expander x:Name="expFuserPlayerInformation" Header="玩家信息" Style="{StaticResource PanelExpander}" IsExpanded="True">
                                 <hc:SimpleStackPanel Style="{StaticResource ExpanderContent}" Margin="2,8,2,0">
                                     <!-- Player Type Selection -->
                                     <Grid Margin="0,0,0,10">
@@ -472,7 +472,7 @@
                                             <ColumnDefinition Width="120"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Text="Player Type" Style="{StaticResource LabelText}" VerticalAlignment="Center"/>
+                                        <TextBlock Text="玩家类型" Style="{StaticResource LabelText}" VerticalAlignment="Center"/>
                                         <hc:ComboBox x:Name="cboFuserPlayerType" Grid.Column="1" Tag="FuserPlayerType"/>
                                     </Grid>
 
@@ -486,15 +486,15 @@
                                             <RowDefinition Height="Auto"/>
                                         </Grid.RowDefinitions>
                                         
-                                        <CheckBox x:Name="chkHighAlert" Content="High Alert Indicator" Tag="HighAlertIndicator"
+                                        <CheckBox x:Name="chkHighAlert" Content="高警报指示器" Tag="HighAlertIndicator"
                                               Margin="0,0,0,10" Grid.Row="0" Grid.Column="0"
                                               Style="{StaticResource DynamicCheckBoxStyle}"/>
 
-                                        <CheckBox x:Name="chkImportantIndicators" Content="Important Indicator" Tag="ImportantIndicators"
+                                        <CheckBox x:Name="chkImportantIndicators" Content="重要指示器" Tag="ImportantIndicators"
                                               Margin="0,0,0,10" Grid.Row="0" Grid.Column="1"
                                               Style="{StaticResource DynamicCheckBoxStyle}"/>
 
-                                        <CheckBox x:Name="chkShowImportantPlayerLoot" Content="Show Important Loot" Tag="ShowImportantPlayerLoot"
+                                        <CheckBox x:Name="chkShowImportantPlayerLoot" Content="显示重要战利品" Tag="ShowImportantPlayerLoot"
                                               Margin="0,0,0,10" Grid.Row="1" Grid.Column="1"
                                               Style="{StaticResource DynamicCheckBoxStyle}"/>
                                     </Grid>
@@ -505,12 +505,12 @@
                                             <ColumnDefinition Width="120"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Text="Render Distance" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="渲染距离" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
                                         <controls:TextValueSlider
                                                 x:Name="sldrPlayerTypeRenderDistance" Tag="PlayerTypeRenderDistance"
                                                 Minimum="0" Maximum="1500"
-                                                MinContent="Off" MaxContent="Max"
+                                                MinContent="关闭" MaxContent="最大"
                                                 SmallChange="1" TickFrequency="1"
                                                 IsSnapToTickEnabled="True"
                                                 ContentStringFormat="{}{0:0m}" 
@@ -523,13 +523,13 @@
                                             <ColumnDefinition Width="120"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Text="Render Mode" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="渲染模式" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
                                         <hc:ComboBox x:Name="cboPlayerRenderMode" Grid.Column="1" Tag="PlayerRenderMode">
-                                            <ComboBoxItem Content="None"/>
-                                            <ComboBoxItem Content="Bones" IsSelected="True"/>
-                                            <ComboBoxItem Content="Box"/>
-                                            <ComboBoxItem Content="Head Dot"/>
+                                            <ComboBoxItem Content="无"/>
+                                            <ComboBoxItem Content="骨骼" IsSelected="True"/>
+                                            <ComboBoxItem Content="盒子"/>
+                                            <ComboBoxItem Content="头部点"/>
                                         </hc:ComboBox>
                                     </Grid>
 
@@ -540,7 +540,7 @@
                                                 <ColumnDefinition Width="120"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock Text="Minimum KD" Style="{StaticResource LabelText}" 
+                                            <TextBlock Text="最低KD" Style="{StaticResource LabelText}" 
                                                 VerticalAlignment="Center" Grid.Column="0"/>
                                             <controls:TextValueSlider
                                                 x:Name="sldrMinimumKD" Tag="MinimumKD"
@@ -555,14 +555,14 @@
                                     <!-- Information Selection -->
                                     <hc:CheckComboBox x:Name="ccbFuserPlayerInformation" Grid.Column="1" Margin="0,0,0,0"
                                                           Style="{StaticResource CheckComboBoxExtend}"
-                                                          hc:TitleElement.Title="Information"
+                                                          hc:TitleElement.Title="信息"
                                                           hc:TitleElement.TitlePlacement="Top"
-                                                          hc:InfoElement.Placeholder="Name, Health, Distance, Weapon..."/>
+                                                          hc:InfoElement.Placeholder="名称、生命值、距离、武器..."/>
                                 </hc:SimpleStackPanel>
                             </Expander>
 
                             <!-- Entity Information Expander -->
-                            <Expander x:Name="expFuserEntityInformation" Header="Entity Information" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                            <Expander x:Name="expFuserEntityInformation" Header="实体信息" Style="{StaticResource PanelExpander}" IsExpanded="True">
                                 <hc:SimpleStackPanel Style="{StaticResource ExpanderContent}" Margin="2,8,2,0">
                                     <!-- Entity Type Selection -->
                                     <Grid Margin="0,0,0,10">
@@ -570,7 +570,7 @@
                                             <ColumnDefinition Width="120"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Text="Entity Type" Style="{StaticResource LabelText}" VerticalAlignment="Center"/>
+                                        <TextBlock Text="实体类型" Style="{StaticResource LabelText}" VerticalAlignment="Center"/>
                                         <hc:ComboBox x:Name="cboFuserEntityType" Grid.Column="1" Tag="FuserEntityType"/>
                                     </Grid>
 
@@ -581,7 +581,7 @@
                                                 <ColumnDefinition Width="*"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
-                                            <CheckBox x:Name="chkShowImportantCorpseLoot" Content="Show Important Loot" Tag="ShowImportantCorpseLoot"
+                                            <CheckBox x:Name="chkShowImportantCorpseLoot" Content="显示重要尸体战利品" Tag="ShowImportantCorpseLoot"
                                                       Style="{StaticResource DynamicCheckBoxStyle}" Grid.Column="0" Margin="0,0,5,8"/>
                                         </Grid>
                                         
@@ -591,9 +591,9 @@
                                                 <ColumnDefinition Width="*"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
-                                            <CheckBox x:Name="chkShowLockedDoors" Content="Show Locked" Tag="ShowLockedDoors"
+                                            <CheckBox x:Name="chkShowLockedDoors" Content="显示锁定的门" Tag="ShowLockedDoors"
                                                       Style="{StaticResource DynamicCheckBoxStyle}" Grid.Column="0" Margin="0,0,5,8"/>
-                                            <CheckBox x:Name="chkShowUnlockedDoors" Content="Show Unlocked" Tag="ShowUnlockedDoors"
+                                            <CheckBox x:Name="chkShowUnlockedDoors" Content="显示未锁定的门" Tag="ShowUnlockedDoors"
                                                       Style="{StaticResource DynamicCheckBoxStyle}" Grid.Column="1" Margin="0,0,5,8"/>
                                         </Grid>
 
@@ -603,7 +603,7 @@
                                                 <ColumnDefinition Width="*"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
-                                            <CheckBox x:Name="chkShowTripwireLine" Content="Show Tripwire Line" Tag="ShowTripwireLine"
+                                            <CheckBox x:Name="chkShowTripwireLine" Content="显示绊线" Tag="ShowTripwireLine"
                                                       Style="{StaticResource DynamicCheckBoxStyle}" Grid.Column="0" Margin="0,0,5,8"/>
                                         </Grid>
 
@@ -619,14 +619,14 @@
                                                 <RowDefinition Height="Auto"/>
                                             </Grid.RowDefinitions>
 
-                                            <CheckBox x:Name="chkShowGrenadeRadius" Content="Show Radius" Tag="ShowGrenadeRadius"
+                                            <CheckBox x:Name="chkShowGrenadeRadius" Content="显示半径" Tag="ShowGrenadeRadius"
                                                       Style="{StaticResource DynamicCheckBoxStyle}" 
                                                       Grid.Row="0" Grid.Column="0" Margin="0,0,5,8"/>
-                                            <CheckBox x:Name="chkShowGrenadeTrail" Content="Show Trail" Tag="ShowGrenadeTrail"
+                                            <CheckBox x:Name="chkShowGrenadeTrail" Content="显示轨迹" Tag="ShowGrenadeTrail"
                                                       Style="{StaticResource DynamicCheckBoxStyle}" 
                                                       Grid.Row="0" Grid.Column="1" Margin="5,0,0,8"/>
 
-                                            <TextBlock Text="Trail Duration" Style="{StaticResource LabelText}" 
+                                            <TextBlock Text="轨迹持续时间" Style="{StaticResource LabelText}" 
                                                        VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="0,0,5,8"
                                                        Visibility="{Binding ElementName=chkShowGrenadeTrail, Path=IsChecked, Converter={StaticResource Boolean2VisibilityConverter}}"/>
                                             <controls:TextValueSlider
@@ -638,7 +638,7 @@
                                                 Grid.Row="1" Grid.Column="1" Margin="5,0,0,8"
                                                 Visibility="{Binding ElementName=chkShowGrenadeTrail, Path=IsChecked, Converter={StaticResource Boolean2VisibilityConverter}}"/>
 
-                                            <TextBlock Text="Min Trail Distance" Style="{StaticResource LabelText}" 
+                                            <TextBlock Text="最小轨迹距离" Style="{StaticResource LabelText}" 
                                                              VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Margin="0,0,5,0"
                                                              Visibility="{Binding ElementName=chkShowGrenadeTrail, Path=IsChecked, Converter={StaticResource Boolean2VisibilityConverter}}"/>
                                             <controls:TextValueSlider
@@ -658,15 +658,15 @@
                                             <ColumnDefinition Width="120"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Text="Render Mode" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="渲染模式" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
                                         <hc:ComboBox x:Name="cboEntityRenderMode" Grid.Column="1" Tag="EntityRenderMode">
-                                            <ComboBoxItem Content="None"/>
-                                            <ComboBoxItem Content="Dot"/>
-                                            <ComboBoxItem Content="Cross"/>
-                                            <ComboBoxItem Content="Plus"/>
-                                            <ComboBoxItem Content="Square" IsSelected="True"/>
-                                            <ComboBoxItem Content="Diamond"/>
+                                            <ComboBoxItem Content="无"/>
+                                            <ComboBoxItem Content="点"/>
+                                            <ComboBoxItem Content="交叉"/>
+                                            <ComboBoxItem Content="十字"/>
+                                            <ComboBoxItem Content="方形" IsSelected="True"/>
+                                            <ComboBoxItem Content="菱形"/>
                                         </hc:ComboBox>
                                     </Grid>
 
@@ -677,12 +677,12 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <TextBlock Text="Render Distance" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="渲染距离" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
                                         <controls:TextValueSlider
                                             x:Name="sldrEntityTypeRenderDistance" Tag="EntityTypeRenderDistance"
                                             Minimum="0" Maximum="1500"
-                                            MinContent="Off" MaxContent="Max"
+                                            MinContent="关闭" MaxContent="最大"
                                             SmallChange="1" TickFrequency="1"
                                             IsSnapToTickEnabled="True"
                                             ContentStringFormat="{}{0:0m}" 
@@ -692,9 +692,9 @@
                                     <!-- Information Selection -->
                                     <hc:CheckComboBox x:Name="ccbFuserEntityInformation" Grid.Column="1" Margin="0,0,0,0"
                                                       Style="{StaticResource CheckComboBoxExtend}"
-                                                      hc:TitleElement.Title="Information"
+                                                      hc:TitleElement.Title="信息"
                                                       hc:TitleElement.TitlePlacement="Top"
-                                                      hc:InfoElement.Placeholder="Name, Distance, Value..."/>
+                                                      hc:InfoElement.Placeholder="名称、距离、价值..."/>
                                 </hc:SimpleStackPanel>
                             </Expander>
                         </hc:SimpleStackPanel>

@@ -72,7 +72,7 @@
                                              Tag="{Binding}"
                                              Width="10" Height="10"
                                              Cursor="Hand"
-                                             ToolTip="Click to toggle filter group"
+                                             ToolTip="单击以切换筛选器组"
                                              MouseLeftButtonDown="GroupStatusIndicator_MouseLeftButtonDown">
                                         <Ellipse.Style>
                                             <Style TargetType="Ellipse">
@@ -178,7 +178,7 @@
                                           Opacity="{Binding Notify, Converter={StaticResource BoolToOpacityConverter}}"
                                           Cursor="Hand"
                                           Margin="8,0,0,0"
-                                          ToolTip="Toggle notifications for this item"
+                                          ToolTip="切换此项目的通知"
                                           MouseLeftButtonDown="NotifyIcon_MouseLeftButtonDown">
                                         <Path.Style>
                                             <Style TargetType="Path">
@@ -199,7 +199,7 @@
                                             BorderThickness="0"
                                             Cursor="Hand"
                                             Margin="4,0,0,0"
-                                            ToolTip="{Binding HasNote, Converter={x:Static local:BoolToStringConverter.Instance}, ConverterParameter='Edit note|Add note'}"
+                                            ToolTip="{Binding HasNote, Converter={x:Static local:BoolToStringConverter.Instance}, ConverterParameter='编辑笔记|添加笔记'}"
                                             Click="NoteButton_Click">
                                         <Button.Style>
                                             <Style TargetType="Button">
@@ -249,7 +249,7 @@
                                             BorderThickness="0"
                                             Cursor="Hand"
                                             Margin="4,0,0,0"
-                                            ToolTip="{Binding Blacklist, Converter={x:Static local:BoolToStringConverter.Instance}, ConverterParameter='Remove from blacklist|Add to blacklist'}"
+                                            ToolTip="{Binding Blacklist, Converter={x:Static local:BoolToStringConverter.Instance}, ConverterParameter='从黑名单中删除|添加到黑名单'}"
                                             Click="BlacklistButton_Click">
                                         <Button.Style>
                                             <Style TargetType="Button">
@@ -303,7 +303,7 @@
                                                 BorderBrush="{DynamicResource BorderBrush}"
                                                 BorderThickness="1"
                                                 Cursor="Hand"
-                                                ToolTip="Change item color">
+                                                ToolTip="更改物品颜色">
                                             <Button.Template>
                                                 <ControlTemplate TargetType="Button">
                                                     <Border x:Name="ColorBorder"
@@ -337,7 +337,7 @@
                                             CornerRadius="6"
                                             Cursor="Hand"
                                             Margin="0,0,12,0"
-                                            ToolTip="Toggle item filtering"
+                                            ToolTip="切换物品筛选"
                                             MouseLeftButtonDown="EnabledIcon_MouseLeftButtonDown">
                                         <Border.Style>
                                             <Style TargetType="Border">
@@ -409,14 +409,14 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Loot Filter" Style="{StaticResource PanelHeaderText}"/>
+                <TextBlock Text="战利品筛选器" Style="{StaticResource PanelHeaderText}"/>
 
                 <!-- import/export menu button -->
                 <Button x:Name="btnMenu" Tag="ContextMenu"
                         Grid.Column="1" 
                         Width="26" Height="26" Margin="0,0,5,0"
                         Style="{StaticResource ButtonIcon}"
-                        ToolTip="Import/Export Options"
+                        ToolTip="导入/导出选项"
                         hc:IconElement.Width="18"
                         hc:IconElement.Geometry="{StaticResource EllipsisVerticalGeometry}">
                     <Button.ContextMenu>
@@ -424,7 +424,7 @@
                                      Placement="Bottom" 
                                      HorizontalOffset="-85"
                                      MaxWidth="200">
-                            <MenuItem x:Name="mnuExportSelected" Tag="ExportSelectedFilter" Header="Export Selected">
+                            <MenuItem x:Name="mnuExportSelected" Tag="ExportSelectedFilter" Header="导出选中">
                                 <MenuItem.Icon>
                                     <Path Width="14" Height="14"
                                           Stretch="Uniform"
@@ -432,7 +432,7 @@
                                           Fill="{DynamicResource TextIconBrush}"/>
                                 </MenuItem.Icon>
                             </MenuItem>
-                            <MenuItem x:Name="mnuExportAll" Tag="ExportAllFilters" Header="Export All">
+                            <MenuItem x:Name="mnuExportAll" Tag="ExportAllFilters" Header="全部导出">
                                 <MenuItem.Icon>
                                     <Path Width="14" Height="14"
                                           Stretch="Uniform"
@@ -441,7 +441,7 @@
                                 </MenuItem.Icon>
                             </MenuItem>
                             <Separator Margin="-28,0,0,0"/>
-                            <MenuItem x:Name="mnuImport" Tag="ImportFilters" Header="Import">
+                            <MenuItem x:Name="mnuImport" Tag="ImportFilters" Header="导入">
                                 <MenuItem.Icon>
                                     <Path Width="14" Height="14"
                                           Stretch="Uniform"
@@ -488,13 +488,13 @@
                                         Grid.Column="0"
                                         Height="24"
                                         FontSize="11"
-                                        hc:InfoElement.Placeholder="Group name..."/>
+                                        hc:InfoElement.Placeholder="组名称..."/>
 
                         <Button x:Name="btnAddGroup" Tag="AddGroup"
                                     Grid.Column="1"
                                     Height="28" Width="36" Margin="6,0,0,0"
                                     Style="{StaticResource ButtonIcon}"
-                                    ToolTip="Add Filter Group"
+                                    ToolTip="添加筛选器组"
                                     hc:IconElement.Width="14"
                                     hc:IconElement.Geometry="{StaticResource PlusGeometry}"/>
                     </Grid>
@@ -526,9 +526,9 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Expander x:Name="expLootFilterSettings" Grid.Row="0" Header="Filter Settings" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                    <Expander x:Name="expLootFilterSettings" Grid.Row="0" Header="筛选器设置" Style="{StaticResource PanelExpander}" IsExpanded="True">
                         <hc:SimpleStackPanel Style="{StaticResource ExpanderContent}" Margin="6,8,2,0">
-                            <GroupBox Header="Filter Settings"
+                            <GroupBox Header="筛选器设置"
                                       Style="{StaticResource TransparentGroupBoxStyle}">
                                 <hc:SimpleStackPanel Margin="8,0,8,0">
                                     <!-- group name & remove button -->
@@ -546,7 +546,7 @@
                                                 Grid.Column="1"
                                                 Height="28" Width="34" 
                                                 Style="{StaticResource ButtonIcon}"
-                                                ToolTip="Remove Filter Group"
+                                                ToolTip="移除筛选器组"
                                                 hc:IconElement.Width="14"
                                                 hc:IconElement.Geometry="{StaticResource MinusGeometry}"/>
                                     </Grid>
@@ -560,11 +560,11 @@
                                             <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <CheckBox x:Name="chkStatic" Content="Static" Tag="StaticFilter"
+                                        <CheckBox x:Name="chkStatic" Content="静态" Tag="StaticFilter"
                                                   Grid.Column="0" Margin="0,0,20,0"
                                                   Style="{StaticResource DynamicCheckBoxStyle}"/>
 
-                                        <CheckBox x:Name="chkNotify" Content="Notify" Tag="FilterNotifications"
+                                        <CheckBox x:Name="chkNotify" Content="通知" Tag="FilterNotifications"
                                                   Grid.Column="1" Margin="0,0,10,0"
                                                   Style="{StaticResource DynamicCheckBoxStyle}"/>
 
@@ -572,9 +572,9 @@
                                                     Visibility="{Binding IsChecked, ElementName=chkNotify, Converter={StaticResource Boolean2VisibilityConverter}}">
                                             <hc:NumericUpDown x:Name="nudNotifyTime" Tag="NotificationTime"
                                                               Minimum="0" Maximum="3600" Width="60" Height="28"
-                                                              ToolTip="Interval in seconds for repeat notifications"
+                                                              ToolTip="重复通知的间隔秒数"
                                                               Margin="0,0,5,0"/>
-                                            <TextBlock Text="sec" 
+                                            <TextBlock Text="秒" 
                                                        VerticalAlignment="Center"
                                                        Style="{StaticResource LabelText}"
                                                        Margin="0"/>
@@ -585,7 +585,7 @@
                         </hc:SimpleStackPanel>
                     </Expander>
 
-                    <Expander x:Name="expLootFilterItems" Grid.Row="1" Header="Filter Items" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                    <Expander x:Name="expLootFilterItems" Grid.Row="1" Header="筛选物品" Style="{StaticResource PanelExpander}" IsExpanded="True">
                         <Grid Margin="6,8,0,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -605,19 +605,19 @@
                                 <hc:TextBox x:Name="txtItemSearch" Tag="ItemSearch"
                                             Grid.Column="0"
                                             Height="28" Margin="0,0,5,0"
-                                            hc:InfoElement.Placeholder="Search item..."/>
+                                            hc:InfoElement.Placeholder="搜索物品..."/>
 
-                                <Button x:Name="btnAddItem" Content="Add" Tag="AddItem"
+                                <Button x:Name="btnAddItem" Content="添加" Tag="AddItem"
                                         Grid.Column="1" Height="28" Width="36"
                                         Style="{StaticResource ButtonIcon}"
-                                        ToolTip="Add Item"
+                                        ToolTip="添加物品"
                                         hc:IconElement.Width="14"
                                         hc:IconElement.Geometry="{StaticResource PlusGeometry}"/>
 
-                                <Button x:Name="btnRemoveItem" Content="Remove" Tag="RemoveItem"
+                                <Button x:Name="btnRemoveItem" Content="移除" Tag="RemoveItem"
                                         Grid.Column="2" Height="28" Width="34"
                                         Style="{StaticResource ButtonIcon}"
-                                        ToolTip="Remove Item"
+                                        ToolTip="移除物品"
                                         hc:IconElement.Width="14"
                                         hc:IconElement.Geometry="{StaticResource MinusGeometry}"/>
                             </Grid>
@@ -627,11 +627,11 @@
                                          DisplayMemberPath="Name" 
                                          SelectedValuePath="Id"
                                          Height="28" Margin="0,0,0,10"
-                                         hc:InfoElement.Placeholder="Select item from search results"/>
+                                         hc:InfoElement.Placeholder="从搜索结果中选择物品"/>
 
                             <hc:SimpleStackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,0,0,8">
                                 <TextBlock Grid.Column="0" 
-                                           Text="Bulk Actions:" 
+                                           Text="批量操作:" 
                                            VerticalAlignment="Center"
                                            Margin="0,0,6,0"
                                            Style="{StaticResource LabelText}"
@@ -640,29 +640,29 @@
                                 <Button x:Name="btnBulkColor" Tag="BulkColor"
                                         Margin="0,0,4,0" Height="28" Width="60"
                                         Style="{StaticResource ButtonPrimary}"
-                                        ToolTip="Change color of selected items"
-                                        Content="Color"
+                                        ToolTip="更改选中物品的颜色"
+                                        Content="颜色"
                                         FontSize="12"/>
 
                                 <Button x:Name="btnBulkEnable" Tag="BulkEnable"
                                         Margin="0,0,4,0" Height="28" Width="60"
                                         Style="{StaticResource ButtonPrimary}"
-                                        ToolTip="Enable selected items"
-                                        Content="Enable"
+                                        ToolTip="启用选中物品"
+                                        Content="启用"
                                         FontSize="12"/>
 
                                 <Button x:Name="btnBulkDisable" Tag="BulkDisable"
                                         Margin="0,0,4,0" Height="28" Width="60"
                                         Style="{StaticResource ButtonPrimary}"
-                                        ToolTip="Disable selected items"
-                                        Content="Disable"
+                                        ToolTip="禁用选中物品"
+                                        Content="禁用"
                                         FontSize="12"/>
 
                                 <Button x:Name="btnBulkNotify" Tag="BulkNotify"
                                         Height="28" Width="60"
                                         Style="{StaticResource ButtonPrimary}"
-                                        ToolTip="Toggle notifications for selected items"
-                                        Content="Notify"
+                                        ToolTip="切换选中物品的通知"
+                                        Content="通知"
                                         FontSize="12"/>
                             </hc:SimpleStackPanel>
 
@@ -679,7 +679,7 @@
 
                             <!-- info label -->
                             <TextBlock Grid.Row="4"
-                                           Text="Drag filter groups to reorder priority • Drag items to reorder within group • Ctrl+Click or Shift+Click to multi-select items" 
+                                           Text="拖动筛选器组以重新排序 • 拖动项目以在组内重新排序 • Ctrl+单击或Shift+单击可多选项目" 
                                            Style="{StaticResource LabelText}" 
                                            Margin="0,5,0,0" 
                                            HorizontalAlignment="Center"

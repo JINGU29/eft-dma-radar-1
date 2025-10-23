@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Text="Memory Writing" Style="{StaticResource PanelHeaderText}"/>
+                <TextBlock Text="内存写入" Style="{StaticResource PanelHeaderText}"/>
 
                 <!-- Close button -->
                 <Border Grid.Column="1" Style="{StaticResource CloseButtonBorder}">
@@ -39,7 +39,7 @@
             <ScrollViewer Style="{StaticResource PanelScrollViewer}" Margin="5,10,5,21">
                 <hc:SimpleStackPanel>
                     <!-- Global Settings Section -->
-                    <Expander x:Name="expGlobalSettings" Header="Global Settings" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                    <Expander x:Name="expGlobalSettings" Header="全局设置" Style="{StaticResource PanelExpander}" IsExpanded="True">
                         <hc:SimpleStackPanel Style="{StaticResource ExpanderContent}" Margin="2,8,2,0">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -55,31 +55,31 @@
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
 
-                                <CheckBox x:Name="chkMasterSwitch" Content="Master Switch" 
+                                <CheckBox x:Name="chkMasterSwitch" Content="主开关" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
                                           Margin="0,0,0,8" Tag="MemWritesEnabled"/>
 
-                                <CheckBox x:Name="chkAdvancedWrites" Content="Advanced Writes" 
+                                <CheckBox x:Name="chkAdvancedWrites" Content="高级写入" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Row="1" Grid.Column="0" 
                                           Margin="0,0,5,8" VerticalAlignment="Bottom" Tag="AdvancedMemWrites"/>
 
-                                <CheckBox x:Name="chkAntiPage" Content="Anti-Page" 
+                                <CheckBox x:Name="chkAntiPage" Content="反分页" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Row="1" Grid.Column="1" 
                                           Margin="5,0,0,8" Tag="AntiPage"/>
 
-                                <CheckBox x:Name="chkRageMode" Content="Rage Mode" 
+                                <CheckBox x:Name="chkRageMode" Content="狂暴模式" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Row="3" Grid.Column="0" 
                                           Margin="0,0,0,8" VerticalAlignment="Bottom" Tag="RageMode"/>
 
-                                <Button x:Name="btnAntiAFK" Content="Anti AFK" 
+                                <Button x:Name="btnAntiAFK" Content="反暂离" 
                                         Grid.Row="4" Grid.Column="0"
                                         Style="{StaticResource ButtonPrimary}"/>
 
-                                <Button x:Name="btnGymHack" Content="Gym Hack"
+                                <Button x:Name="btnGymHack" Content="健身房破解"
                                         Grid.Row="4" Grid.Column="1"
                                         Style="{StaticResource ButtonPrimary}"/>
                             </Grid>
@@ -87,9 +87,9 @@
                     </Expander>
 
                     <!-- Aimbot Settings Section -->
-                    <Expander x:Name="expAimbotSettings" Header="Aimbot Settings" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                    <Expander x:Name="expAimbotSettings" Header="自瞄设置" Style="{StaticResource PanelExpander}" IsExpanded="True">
                         <hc:SimpleStackPanel Style="{StaticResource ExpanderContent}" Margin="2,8,2,0">
-                            <CheckBox x:Name="chkEnableAimbot" Content="Enable" 
+                            <CheckBox x:Name="chkEnableAimbot" Content="启用" 
                                       Style="{StaticResource DynamicCheckBoxStyle}" 
                                       Margin="0,0,0,8" Tag="EnableAimbot"/>
 
@@ -100,18 +100,18 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="Mode" Style="{StaticResource LabelText}" 
+                                <TextBlock Text="模式" Style="{StaticResource LabelText}" 
                                            VerticalAlignment="Center" Grid.Column="0" Margin="0,0,10,0"/>
 
                                 <hc:SimpleStackPanel Grid.Column="1" Orientation="Horizontal">
                                     <RadioButton x:Name="rdbFOV"
-                                                 Content="FOV"
+                                                 Content="视野"
                                                  Tag="FOV"
                                                  GroupName="AimbotMode"
                                                  Margin="0,0,20,0"/>
 
                                     <RadioButton x:Name="rdbCQB"
-                                                 Content="CQB"
+                                                 Content="近战"
                                                  Tag="CQB"
                                                  GroupName="AimbotMode"/>
                                 </hc:SimpleStackPanel>
@@ -124,15 +124,15 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="Target Bone" Style="{StaticResource LabelText}" 
+                                <TextBlock Text="目标骨骼" Style="{StaticResource LabelText}" 
                                            VerticalAlignment="Center" Grid.Column="0" Margin="0,0,10,0"/>
 
                                 <hc:ComboBox x:Name="cboTargetBone" Grid.Column="1">
-                                    <ComboBoxItem Content="Head" IsSelected="True"/>
-                                    <ComboBoxItem Content="Neck"/>
-                                    <ComboBoxItem Content="Thorax"/>
-                                    <ComboBoxItem Content="Stomach"/>
-                                    <ComboBoxItem Content="Legs"/>
+                                    <ComboBoxItem Content="头部" IsSelected="True"/>
+                                    <ComboBoxItem Content="颈部"/>
+                                    <ComboBoxItem Content="胸部"/>
+                                    <ComboBoxItem Content="腹部"/>
+                                    <ComboBoxItem Content="腿部"/>
                                 </hc:ComboBox>
                             </Grid>
 
@@ -142,7 +142,7 @@
                                     <ColumnDefinition Width="90"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="FOV" Style="{StaticResource LabelText}" 
+                                <TextBlock Text="视野" Style="{StaticResource LabelText}" 
                                            VerticalAlignment="Center" Grid.Column="0"/>
                                 <controls:TextValueSlider
                                    x:Name="sldrAimbotFOV"
@@ -160,7 +160,7 @@
                                     <ColumnDefinition Width="90"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="Max Distance" Style="{StaticResource LabelText}" 
+                                <TextBlock Text="最大距离" Style="{StaticResource LabelText}" 
                                            VerticalAlignment="Center" Grid.Column="0"/>
                                 <controls:TextValueSlider
                                     x:Name="sldrAimbotDistance"
@@ -175,9 +175,9 @@
                             <!-- Aimbot Options -->
                             <hc:CheckComboBox x:Name="ccbAimbotOptions" Grid.Column="1" Margin="0,0,0,0"
                                                   Style="{StaticResource CheckComboBoxExtend}"
-                                                  hc:InfoElement.Title="Options"
+                                                  hc:InfoElement.Title="选项"
                                                   hc:InfoElement.TitlePlacement="Top"
-                                                  hc:InfoElement.Placeholder="Safe Lock, Auto Bone..."/>
+                                                  hc:InfoElement.Placeholder="安全锁定, 自动骨骼..."/>
 
                             <!-- Bone RNG % -->
                             <Border x:Name="pnlBoneRNG" Margin="0,8,0,8"
@@ -199,7 +199,7 @@
                                             <ColumnDefinition Width="60"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Text="Head %" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="头部 %" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
                                         <controls:TextValueSlider
                                             x:Name="sldrAimbotRNGHead"
@@ -216,7 +216,7 @@
                                             <ColumnDefinition Width="60"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Text="Torso %" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="身体 %" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
                                         <controls:TextValueSlider
                                              x:Name="sldrAimbotRNGTorso"
@@ -233,7 +233,7 @@
                                             <ColumnDefinition Width="60"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Text="Arms %" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="手臂 %" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
                                         <controls:TextValueSlider
                                              x:Name="sldrAimbotRNGArms"
@@ -250,7 +250,7 @@
                                             <ColumnDefinition Width="60"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Text="Legs %" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="腿部 %" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
                                         <controls:TextValueSlider
                                              x:Name="sldrAimbotRNGLegs"
@@ -266,7 +266,7 @@
                     </Expander>
 
                     <!-- Weapons Section -->
-                    <Expander x:Name="expWeapons" Header="Weapons" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                    <Expander x:Name="expWeapons" Header="武器" Style="{StaticResource PanelExpander}" IsExpanded="True">
                         <Grid Margin="2,0,2,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -287,23 +287,23 @@
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
 
-                                <CheckBox x:Name="chkNoWeaponMalfunctions" Content="No Malfunctions" 
+                                <CheckBox x:Name="chkNoWeaponMalfunctions" Content="无故障" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" Grid.Column="0" Grid.Row="0"
                                           Margin="0,0,5,8" Tag="NoWeaponMalfunctions"/>
 
-                                <CheckBox x:Name="chkMagDrills" Content="Mag Drills" 
+                                <CheckBox x:Name="chkMagDrills" Content="弹匣训练" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" Grid.Column="1" Grid.Row="0"
                                           Margin="5,0,0,8" Tag="MagDrills"/>
 
-                                <CheckBox x:Name="chkFastWeaponOps" Content="Fast Weapon Ops" 
+                                <CheckBox x:Name="chkFastWeaponOps" Content="快速武器操作" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" Grid.Column="0" Grid.Row="1"
                                           Margin="0,0,5,8" Tag="FastWeaponOps"/>
 
-                                <CheckBox x:Name="chkDisableWeaponCollision" Content="Disable Wepon Collision" 
+                                <CheckBox x:Name="chkDisableWeaponCollision" Content="禁用武器碰撞" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" Grid.Column="1" Grid.Row="1"
                                           Margin="5,0,0,8" Tag="DisableWeaponCollision"/>
 
-                                <CheckBox x:Name="chkRemoveableAttachments" Content="Remove Attachments" 
+                                <CheckBox x:Name="chkRemoveableAttachments" Content="移除配件" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" Grid.Column="0" Grid.Row="2"
                                           Margin="0,0,5,0" Tag="RemoveableAttachments"/>
                             </Grid>
@@ -320,14 +320,14 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <CheckBox x:Name="chkNoRecoil" Content="No Recoil" 
+                                    <CheckBox x:Name="chkNoRecoil" Content="无后座力" 
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Grid.Column="0" Tag="NoRecoil"
                                               VerticalAlignment="Center"/>
 
                                     <Button x:Name="btnNoRecoilConfig" Tag="NoRecoilPanel"
                                             Style="{StaticResource ButtonIcon}"
-                                            ToolTip="Configure No Recoil"
+                                            ToolTip="配置无后座力"
                                             Background="Transparent"
                                             BorderThickness="0"
                                             Width="28" Height="28"
@@ -359,7 +359,7 @@
                                                 <ColumnDefinition Width="45"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock Text="Recoil" VerticalAlignment="Center" Style="{StaticResource LabelText}" Grid.Column="0"/>
+                                            <TextBlock Text="后座力" VerticalAlignment="Center" Style="{StaticResource LabelText}" Grid.Column="0"/>
                                             <controls:TextValueSlider
                                                 x:Name="sldrNoRecoilAmt"
                                                 Minimum="0" Maximum="100"
@@ -374,7 +374,7 @@
                                                 <ColumnDefinition Width="45"/>
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock Text="Sway" VerticalAlignment="Center" Style="{StaticResource LabelText}" Grid.Column="0"/>
+                                            <TextBlock Text="摇摆" VerticalAlignment="Center" Style="{StaticResource LabelText}" Grid.Column="0"/>
                                             <controls:TextValueSlider
                                                 x:Name="sldrNoSwayAmt"
                                                 Minimum="0" Maximum="100"
@@ -390,7 +390,7 @@
                     </Expander>
 
                     <!-- Movement Section -->
-                    <Expander x:Name="expMovement" Header="Movement" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                    <Expander x:Name="expMovement" Header="移动" Style="{StaticResource PanelExpander}" IsExpanded="True">
                         <Grid Margin="2,0,2,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -410,22 +410,22 @@
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
 
-                                <CheckBox x:Name="chkInfiniteStamina" Content="Infinite Stamina" 
+                                <CheckBox x:Name="chkInfiniteStamina" Content="無限耐力" 
                                           Style="{StaticResource DynamicCheckBoxStyle}"
                                           Grid.Row="0" Grid.Column="0" 
                                           Margin="0,0,5,8" Tag="InfiniteStamina"/>
 
-                                <CheckBox x:Name="chkFastDuck" Content="Fast Duck" 
+                                <CheckBox x:Name="chkFastDuck" Content="快速下蹲" 
                                           Style="{StaticResource DynamicCheckBoxStyle}"
                                           Grid.Row="0" Grid.Column="1"
                                           Margin="5,0,0,8" Tag="FastDuck"/>
 
-                                <CheckBox x:Name="chkNoInertia" Content="No Inertia" 
+                                <CheckBox x:Name="chkNoInertia" Content="无惯性" 
                                           Style="{StaticResource DynamicCheckBoxStyle}"
                                           Grid.Row="1" Grid.Column="0" 
                                           Margin="0,0,5,0" Tag="NoInertia"/>
 
-                                <CheckBox x:Name="chkMuleMode" Content="M.U.L.E Mode" 
+                                <CheckBox x:Name="chkMuleMode" Content="骡子模式" 
                                           Style="{StaticResource DynamicCheckBoxStyle}"
                                           Grid.Row="1" Grid.Column="1"
                                           Margin="5,0,0,0" Tag="MuleMode"/>
@@ -443,14 +443,14 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <CheckBox x:Name="chkWideLean" Content="Wide Lean" 
+                                    <CheckBox x:Name="chkWideLean" Content="大范围探身" 
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Grid.Column="0" Tag="WideLean"
                                               VerticalAlignment="Center"/>
 
                                     <Button x:Name="btnWideLeanConfig" Tag="WideLeanPanel"
                                             Style="{StaticResource ButtonIcon}"
-                                            ToolTip="Configure Wide Lean"
+                                            ToolTip="配置大范围探身"
                                             Background="Transparent"
                                             BorderThickness="0"
                                             Width="28" Height="28"
@@ -465,14 +465,14 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <CheckBox x:Name="chkLongJump" Content="Long Jump" 
+                                    <CheckBox x:Name="chkLongJump" Content="长跳" 
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Grid.Column="0" Tag="LongJump"
                                               VerticalAlignment="Center"/>
 
                                     <Button x:Name="btnLongJumpConfig" Tag="LongJumpPanel"
                                             Style="{StaticResource ButtonIcon}"
-                                            ToolTip="Configure Long Jump"
+                                            ToolTip="配置长跳"
                                             Background="Transparent"
                                             BorderThickness="0"
                                             Width="28" Height="28"
@@ -499,7 +499,7 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <TextBlock Text="Amt" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="数量" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
 
                                         <controls:TextValueSlider
@@ -525,7 +525,7 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <TextBlock Text="Mult" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="倍率" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
 
                                         <controls:TextValueSlider
@@ -552,14 +552,14 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <CheckBox x:Name="chkMoveSpeed" Content="Move Speed" 
+                                    <CheckBox x:Name="chkMoveSpeed" Content="移动速度" 
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Grid.Column="0" Tag="MoveSpeed"
                                               VerticalAlignment="Center"/>
 
                                     <Button x:Name="btnMoveSpeedConfig" Tag="MoveSpeedPanel"
                                             Style="{StaticResource ButtonIcon}"
-                                            ToolTip="Configure Move Speed"
+                                            ToolTip="配置移动速度"
                                             Background="Transparent"
                                             BorderThickness="0"
                                             Width="28" Height="28"
@@ -588,7 +588,7 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <TextBlock Text="Multiplier" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="倍率" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
 
                                         <controls:TextValueSlider
@@ -606,7 +606,7 @@
                     </Expander>
 
                     <!-- World Section -->
-                    <Expander x:Name="expWorld" Header="World" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                    <Expander x:Name="expWorld" Header="世界" Style="{StaticResource PanelExpander}" IsExpanded="True">
                         <Grid Margin="2,0,2,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -628,15 +628,15 @@
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
 
-                                <CheckBox x:Name="chkDisableShadows" Content="Disable Shadows" 
+                                <CheckBox x:Name="chkDisableShadows" Content="禁用阴影" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Column="0" Grid.Row="0" Margin="0,0,5,8" Tag="DisableShadows"/>
 
-                                <CheckBox x:Name="chkDisableGrass" Content="Disable Grass" 
+                                <CheckBox x:Name="chkDisableGrass" Content="禁用草地" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Column="1" Grid.Row="0" Margin="5,0,0,8" Tag="DisableGrass"/>
 
-                                <CheckBox x:Name="chkClearWeather" Content="Clear Weather" 
+                                <CheckBox x:Name="chkClearWeather" Content="晴朗天气" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Column="0" Grid.Row="1" Margin="0,0,5,0" Tag="ClearWeather"/>
                             </Grid>
@@ -653,14 +653,14 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <CheckBox x:Name="chkTimeOfDay" Content="Time of Day"
+                                    <CheckBox x:Name="chkTimeOfDay" Content="一天中的时间"
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Grid.Column="0" Tag="TimeOfDay"
                                               VerticalAlignment="Center"/>
 
                                     <Button x:Name="btnTimeOfDayConfig" Tag="TimeOfDayPanel"
                                             Style="{StaticResource ButtonIcon}"
-                                            ToolTip="Configure time of day"
+                                            ToolTip="配置一天中的时间"
                                             Background="Transparent"
                                             BorderThickness="0"
                                             Width="28" Height="28"
@@ -675,14 +675,14 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <CheckBox x:Name="chkFullBright" Content="Full Bright"
+                                    <CheckBox x:Name="chkFullBright" Content="全亮"
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Grid.Column="0" Tag="FullBright"
                                               VerticalAlignment="Center"/>
 
                                     <Button x:Name="btnFullBrightConfig" Tag="FullBrightPanel"
                                             Style="{StaticResource ButtonIcon}" 
-                                            ToolTip="Configure brightness"
+                                            ToolTip="配置亮度"
                                             Background="Transparent"
                                             BorderThickness="0"
                                             Width="28" Height="28"
@@ -709,7 +709,7 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <TextBlock Text="Hour" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="小时" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
                                         <controls:TextValueSlider
                                             x:Name="sldrTimeOfDayHour"
@@ -732,7 +732,7 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <TextBlock Text="Intensity" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="强度" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
 
                                         <controls:TextValueSlider
@@ -759,14 +759,14 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <CheckBox x:Name="chkLTW" Content="Loot Through Wall" 
+                                    <CheckBox x:Name="chkLTW" Content="穿墙拾取" 
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Grid.Column="0" Tag="LTW"
                                               VerticalAlignment="Center"/>
 
                                     <Button x:Name="btnLTWConfig" Tag="LTWPanel"
                                             Style="{StaticResource ButtonIcon}" 
-                                            ToolTip="Configure Loot Through Wall"
+                                            ToolTip="配置穿墙拾取"
                                             Background="Transparent"
                                             BorderThickness="0"
                                             Width="28" Height="28"
@@ -781,14 +781,14 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <CheckBox x:Name="chkExtendedReach" Content="Extended Reach" 
+                                    <CheckBox x:Name="chkExtendedReach" Content="超大范围" 
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Grid.Column="0" Tag="ExtendedReach"
                                               VerticalAlignment="Center"/>
 
                                     <Button x:Name="btnExtendedReachConfig" Tag="ExtendedReachPanel"
                                             Style="{StaticResource ButtonIcon}" 
-                                            ToolTip="Configure Extended Reach"
+                                            ToolTip="配置超大范围"
                                             Background="Transparent"
                                             BorderThickness="0"
                                             Width="28" Height="28"
@@ -815,7 +815,7 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <TextBlock Text="Zoom" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="缩放" Style="{StaticResource LabelText}" 
                                                    VerticalAlignment="Center" Grid.Column="0"/>
                                         <controls:TextValueSlider
                                             x:Name="sldrLTWZoom"
@@ -865,7 +865,7 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <CheckBox x:Name="chkSilentLoot" Content="Silent Loot"
+                                    <CheckBox x:Name="chkSilentLoot" Content="无声拾取"
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Grid.Column="0" Tag="SilentLoot"
                                               VerticalAlignment="Center"/>
@@ -936,7 +936,7 @@
                     </Expander>
 
                     <!-- Camera Section -->
-                    <Expander x:Name="expCamera" Header="Camera" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                    <Expander x:Name="expCamera" Header="相机" Style="{StaticResource PanelExpander}" IsExpanded="True">
                         <Grid Margin="2,0,2,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -953,11 +953,11 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <CheckBox x:Name="chkNoVisor" Content="No Visor" 
+                                <CheckBox x:Name="chkNoVisor" Content="无面罩" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" Grid.Column="0" 
                                           Margin="0,0,5,0" Tag="NoVisor"/>
 
-                                <CheckBox x:Name="chkNightVision" Content="Night Vision" 
+                                <CheckBox x:Name="chkNightVision" Content="夜视" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" Grid.Column="1" 
                                           Margin="5,0,0,0" Tag="NightVision"/>
                             </Grid>
@@ -968,12 +968,12 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <CheckBox x:Name="chkThermalVision" Content="Thermal Vision" 
+                                <CheckBox x:Name="chkThermalVision" Content="热成像" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Column="0" 
                                           Margin="0,0,5,0" Tag="ThermalVision"/>
 
-                                <CheckBox x:Name="chkThirdPerson" Content="Third Person" 
+                                <CheckBox x:Name="chkThirdPerson" Content="第三人称" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Column="1" 
                                           Margin="5,0,0,0" Tag="ThirdPerson"/>
@@ -985,12 +985,12 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <CheckBox x:Name="chkOwlMode" Content="Owl Mode" 
+                                <CheckBox x:Name="chkOwlMode" Content="猫头鹰模式" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Column="0" 
                                           Margin="0,0,5,0" Tag="OwlMode"/>
 
-                                <CheckBox x:Name="chkDisableScreenEffects" Content="Disable Screen Effects" 
+                                <CheckBox x:Name="chkDisableScreenEffects" Content="禁用屏幕特效" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Column="1" 
                                           Margin="5,0,0,0" Tag="DisableScreenEffects"/>
@@ -1009,14 +1009,14 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <CheckBox x:Name="chkFOVChanger" Content="FOV" 
+                                    <CheckBox x:Name="chkFOVChanger" Content="视野" 
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Grid.Column="0" Tag="FOVChanger"
                                               VerticalAlignment="Center"/>
 
                                     <Button x:Name="btnFOVConfig" Tag="FOVPanel"
                                             Style="{StaticResource ButtonIcon}"
-                                            ToolTip="Configure FOV settings"
+                                            ToolTip="配置视野设置"
                                             Background="Transparent"
                                             BorderThickness="0"
                                             Width="28" Height="28"
@@ -1025,7 +1025,7 @@
                                             hc:IconElement.Geometry="{StaticResource GearGeometry}"/>
                                 </Grid>
 
-                                <CheckBox x:Name="chkDisableHeadBobbing" Content="Disable Head Bobbing"
+                                <CheckBox x:Name="chkDisableHeadBobbing" Content="禁用头部晃动"
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Column="2" Margin="5,0,0,0" Tag="DisableHeadBobbing"/>
                             </Grid>
@@ -1055,7 +1055,7 @@
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <TextBlock Text="Base" Style="{StaticResource LabelText}" 
+                                            <TextBlock Text="基础" Style="{StaticResource LabelText}" 
                                                        VerticalAlignment="Center" Grid.Column="0"/>
                                             <controls:TextValueSlider
                                                 x:Name="sldrFOVBase"
@@ -1073,7 +1073,7 @@
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <TextBlock Text="ADS" Style="{StaticResource LabelText}" 
+                                            <TextBlock Text="瞄准" Style="{StaticResource LabelText}" 
                                                        VerticalAlignment="Center" Grid.Column="0"/>
                                             <controls:TextValueSlider
                                                 x:Name="sldrADSFOV"
@@ -1091,7 +1091,7 @@
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <TextBlock Text="TPP" Style="{StaticResource LabelText}" 
+                                            <TextBlock Text="第三人称" Style="{StaticResource LabelText}" 
                                                        VerticalAlignment="Center" Grid.Column="0"/>
                                             <controls:TextValueSlider
                                                 x:Name="sldrTPPFOV"
@@ -1127,7 +1127,7 @@
                     </Expander>
 
                     <!-- Misc Section -->
-                    <Expander x:Name="expMisc" Header="Misc" Style="{StaticResource PanelExpander}" IsExpanded="True">
+                    <Expander x:Name="expMisc" Header="杂项" Style="{StaticResource PanelExpander}" IsExpanded="True">
                         <Grid Margin="2,0,2,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -1146,27 +1146,27 @@
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
 
-                                <CheckBox x:Name="chkStreamerMode" Content="Streamer Mode" 
+                                <CheckBox x:Name="chkStreamerMode" Content="主播模式" 
                                           Style="{StaticResource DynamicCheckBoxStyle}"
                                           Grid.Row="0" Grid.Column="0" 
                                           Margin="0,0,5,8" Tag="StreamerMode"/>
 
-                                <CheckBox x:Name="chkHideRaidCode" Content="Hide Raid Code" 
+                                <CheckBox x:Name="chkHideRaidCode" Content="隐藏突袭代码" 
                                           Style="{StaticResource DynamicCheckBoxStyle}"
                                           Grid.Row="0" Grid.Column="1" 
                                           Margin="5,0,0,8" Tag="HideRaidCode"/>
 
-                                <CheckBox x:Name="chkInstantPlant" Content="Instant Plant" 
+                                <CheckBox x:Name="chkInstantPlant" Content="即时种植" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Row="1" Grid.Column="0" 
                                           Margin="0,0,5,8" Tag="InstantPlant"/>
 
-                                <CheckBox x:Name="chkMedPanel" Content="Med Panel" 
+                                <CheckBox x:Name="chkMedPanel" Content="医疗面板" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Row="1" Grid.Column="1"
                                           Margin="5,0,0,8" Tag="MedPanel"/>
 
-                                <CheckBox x:Name="chkDisableInventoryBlur" Content="Disable Inventory Blur" 
+                                <CheckBox x:Name="chkDisableInventoryBlur" Content="禁用库存模糊" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Row="2" Grid.Column="0"
                                           Margin="0,0,5,0" Tag="DisableInventoryBlur"/>
@@ -1184,14 +1184,14 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <CheckBox x:Name="chkBigHeads" Content="Big Heads" 
+                                    <CheckBox x:Name="chkBigHeads" Content="大头模式" 
                                               Style="{StaticResource DynamicCheckBoxStyle}" 
                                               Grid.Column="0" Tag="BigHeads"
                                               VerticalAlignment="Center"/>
 
                                     <Button x:Name="btnBigHeadsConfig" Tag="BigHeadsPanel"
                                             Style="{StaticResource ButtonIcon}"
-                                            ToolTip="Configure Big Heads scale"
+                                            ToolTip="配置大头模式比例"
                                             Background="Transparent"
                                             BorderThickness="0"
                                             Width="28" Height="28"
@@ -1206,14 +1206,14 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <CheckBox x:Name="chkVisCheck" Content="Visibility Check" 
+                                    <CheckBox x:Name="chkVisCheck" Content="可见性检查" 
                                           Style="{StaticResource DynamicCheckBoxStyle}" 
                                           Grid.Column="0" Tag="VisCheck"
                                           VerticalAlignment="Center"/>
 
                                     <Button x:Name="btnVisCheckConfig" Tag="VisCheckPanel"
                                             Style="{StaticResource ButtonIcon}"
-                                            ToolTip="Configure VisCheck scale"
+                                            ToolTip="配置可见性检查比例"
                                             Background="Transparent"
                                             BorderThickness="0"
                                             Width="28" Height="28"
@@ -1240,7 +1240,7 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <TextBlock Text="Scale" Style="{StaticResource LabelText}" 
+                                        <TextBlock Text="比例" Style="{StaticResource LabelText}" 
                                                        VerticalAlignment="Center" Grid.Column="0"/>
                                         
                                         <controls:TextValueSlider
@@ -1272,7 +1272,7 @@
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <CheckBox x:Name="chkIgnoreAi" Content="Ignore AI" 
+                                            <CheckBox x:Name="chkIgnoreAi" Content="忽略AI" 
                                                        Style="{StaticResource DynamicCheckBoxStyle}" 
                                                        Grid.Column="0" 
                                                        Margin="0,0,0,0" Tag="IgnoreAi"/>
@@ -1284,7 +1284,7 @@
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <TextBlock Text="Low Dist" Style="{StaticResource LabelText}" 
+                                            <TextBlock Text="近距离" Style="{StaticResource LabelText}" 
                                                        VerticalAlignment="Center" Grid.Column="0"/>
                                             <controls:TextValueSlider
                                                 x:Name="sldrVisCheckLowDistance"
@@ -1301,7 +1301,7 @@
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <TextBlock Text="Mid Dist" Style="{StaticResource LabelText}" 
+                                            <TextBlock Text="中距离" Style="{StaticResource LabelText}" 
                                                        VerticalAlignment="Center" Grid.Column="0"/>
                                             <controls:TextValueSlider
                                                 x:Name="sldrVisCheckMidDistance"
@@ -1318,7 +1318,7 @@
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
 
-                                            <TextBlock Text="Far Dist" Style="{StaticResource LabelText}" 
+                                            <TextBlock Text="远距离" Style="{StaticResource LabelText}" 
                                                        VerticalAlignment="Center" Grid.Column="0"/>
                                             <controls:TextValueSlider
                                                 x:Name="sldrVisCheckFarDistance"

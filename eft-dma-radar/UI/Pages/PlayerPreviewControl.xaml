@@ -20,7 +20,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="ESP Preview" Style="{StaticResource PanelHeaderText}"/>
+                <TextBlock Text="ESP 预览" Style="{StaticResource PanelHeaderText}"/>
                 <Border Grid.Column="1" Style="{StaticResource CloseButtonBorder}">
                     <Button x:Name="btnCloseHeader" Style="{StaticResource CloseButton}" Click="btnCloseHeader_Click"/>
                 </Border>
@@ -33,7 +33,7 @@
             <hc:TabControl Style="{StaticResource TabControlInLine}" Margin="0" Background="Transparent" BorderThickness="0" SelectionChanged="TabControl_SelectionChanged">
 
                 <!-- Chams Tab -->
-                <hc:TabItem Header="Chams">
+                <hc:TabItem Header="伪装">
                     <ScrollViewer Style="{StaticResource PanelScrollViewer}">
                         <Grid Margin="10">
                             <Grid.RowDefinitions>
@@ -54,19 +54,19 @@
                                 </Grid.RowDefinitions>
 
                                 <!-- Chams Mode -->
-                                <TextBlock Grid.Column="0" Text="Chams Mode:" Style="{StaticResource LabelText}" VerticalAlignment="Center" Margin="0,0,10,0" Height="16"/>
+                                <TextBlock Grid.Column="0" Text="伪装模式:" Style="{StaticResource LabelText}" VerticalAlignment="Center" Margin="0,0,10,0" Height="16"/>
                                 <ComboBox Grid.Row="0" x:Name="cmbChamsMode" Grid.ColumnSpan="2" Margin="85,5,0,5"/>
 
                                 <!-- Player Type -->
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Player Type:" Style="{StaticResource LabelText}" VerticalAlignment="Center" Margin="0,0,10,0" Height="16"/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="玩家类型:" Style="{StaticResource LabelText}" VerticalAlignment="Center" Margin="0,0,10,0" Height="16"/>
                                 <ComboBox Grid.Row="1" x:Name="cmbPlayerType" Grid.ColumnSpan="2" Margin="85,5,0,5"/>
 
                                 <!-- Display Mode -->
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Display Mode:" Style="{StaticResource LabelText}" VerticalAlignment="Center" Margin="0,0,10,0" Height="16"/>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="显示模式:" Style="{StaticResource LabelText}" VerticalAlignment="Center" Margin="0,0,10,0" Height="16"/>
                                 <ComboBox Grid.Row="2" x:Name="cmbDisplayMode" Grid.ColumnSpan="2" Margin="85,5,0,5">
-                                    <ComboBoxItem Content="Both" IsSelected="True"/>
-                                    <ComboBoxItem Content="Visible"/>
-                                    <ComboBoxItem Content="Invisible"/>
+                                    <ComboBoxItem Content="两者" IsSelected="True"/>
+                                    <ComboBoxItem Content="可见"/>
+                                    <ComboBoxItem Content="不可见"/>
                                 </ComboBox>
                             </Grid>
 
@@ -79,7 +79,7 @@
                         </Grid>
                     </ScrollViewer>
                 </hc:TabItem>
-                <hc:TabItem Header="ESP">
+                <hc:TabItem Header="透视">
                     <ScrollViewer Style="{StaticResource PanelScrollViewer}">
                         <Grid Margin="10">
                             <Grid.RowDefinitions>
@@ -91,35 +91,35 @@
                 
                             <!-- ESP Type ComboBox -->
                             <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
-                                <TextBlock Text="ESP Type:" Style="{StaticResource LabelText}" VerticalAlignment="Center" Margin="0,0,10,0" Width="62"/>
+                                <TextBlock Text="透视类型:" Style="{StaticResource LabelText}" VerticalAlignment="Center" Margin="0,0,10,0" Width="62"/>
                                 <ComboBox x:Name="cmbEspType" Width="149">
-                                    <ComboBoxItem Content="Box" IsSelected="True"/>
-                                    <ComboBoxItem Content="Skeleton"/>
+                                    <ComboBoxItem Content="方框" IsSelected="True"/>
+                                    <ComboBoxItem Content="骨骼"/>
                                 </ComboBox>
                             </StackPanel>
                 
                             <!-- Player Type -->
                             <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
-                                <TextBlock Text="Player Type:" Style="{StaticResource LabelText}" VerticalAlignment="Center" Margin="0,0,10,0" Width="62"/>
+                                <TextBlock Text="玩家类型:" Style="{StaticResource LabelText}" VerticalAlignment="Center" Margin="0,0,10,0" Width="62"/>
                                 <ComboBox x:Name="cmbEspPlayerType" Width="149" SelectionChanged="cmbEspPlayerType_SelectionChanged">
                                     <ComboBoxItem Content="USEC" Tag="USEC" IsSelected="True"/>
                                     <ComboBoxItem Content="BEAR" Tag="BEAR"/>
                                     <ComboBoxItem Content="Boss" Tag="Boss"/>
-                                    <ComboBoxItem Content="Teammate" Tag="Teammate"/>
-                                    <ComboBoxItem Content="PlayerScav" Tag="PlayerScav"/>
-                                    <ComboBoxItem Content="Focused" Tag="Focused"/>
-                                    <ComboBoxItem Content="Streamer" Tag="Streamer"/>
-                                    <ComboBoxItem Content="AimbotTarget" Tag="AimbotTarget"/>
-                                    <ComboBoxItem Content="Special" Tag="Special"/>
+                                    <ComboBoxItem Content="队友" Tag="Teammate"/>
+                                    <ComboBoxItem Content="玩家Scav" Tag="PlayerScav"/>
+                                    <ComboBoxItem Content="聚焦" Tag="Focused"/>
+                                    <ComboBoxItem Content="主播" Tag="Streamer"/>
+                                    <ComboBoxItem Content="自瞄目标" Tag="AimbotTarget"/>
+                                    <ComboBoxItem Content="特殊" Tag="Special"/>
                                     <ComboBoxItem Content="Scav" Tag="Scav"/>
-                                    <ComboBoxItem Content="Raider" Tag="Raider"/>
+                                    <ComboBoxItem Content="掠夺者" Tag="Raider"/>
                                 </ComboBox>
                             </StackPanel>
                 
                             <!-- Enabled Features -->
                             <Border Grid.Row="3" Background="#22000000" CornerRadius="4" Padding="8" Margin="0,-70,0,10">
                                 <StackPanel>
-                                    <TextBlock x:Name="txtEspOptionsTitle" Text="Enabled Features:" FontWeight="Bold" Foreground="White"/>
+                                    <TextBlock x:Name="txtEspOptionsTitle" Text="已启用功能:" FontWeight="Bold" Foreground="White"/>
                                     <ItemsControl x:Name="lstEspFeatures">
                                         <ItemsControl.ItemTemplate>
                                             <DataTemplate>
