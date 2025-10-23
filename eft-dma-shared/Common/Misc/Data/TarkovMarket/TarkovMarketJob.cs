@@ -2,6 +2,8 @@ using System.Text.Json.Serialization;
 using System.Net.Http.Headers;
 using System.Net;
 using System.Text.Json;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
 namespace eft_dma_shared.Common.Misc.Data.TarkovMarket
 {
@@ -18,7 +20,12 @@ namespace eft_dma_shared.Common.Misc.Data.TarkovMarket
                     Items = ParseMarketData(data),
                     Tasks = data.Data.Tasks
                 };
-                return JsonSerializer.Serialize(result);
+                var jsonOptions = new JsonSerializerOptions()
+                {
+                    Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+                    WriteIndented = true
+                };
+                return JsonSerializer.Serialize(result, jsonOptions);
             }
             catch (Exception ex)
             {

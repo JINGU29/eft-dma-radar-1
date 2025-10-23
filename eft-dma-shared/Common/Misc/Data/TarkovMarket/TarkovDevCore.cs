@@ -2,6 +2,8 @@
 using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
 namespace eft_dma_shared.Common.Misc.Data.TarkovMarket
 {
@@ -9,7 +11,8 @@ namespace eft_dma_shared.Common.Misc.Data.TarkovMarket
     {
         private static readonly JsonSerializerOptions _jsonOptions = new()
         {
-            PropertyNameCaseInsensitive = true
+            PropertyNameCaseInsensitive = true,
+            Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)
         };
 
         public static async Task<TarkovDevQuery> QueryTarkovDevAsync()
@@ -19,7 +22,7 @@ namespace eft_dma_shared.Common.Misc.Data.TarkovMarket
                 { "query",
                 """
                 {
-                  items {
+                  items(lang:zh){
                     id
                     name
                     shortName
@@ -48,16 +51,16 @@ namespace eft_dma_shared.Common.Misc.Data.TarkovMarket
                       }
                     }
                   }
-                  questItems {
+                  questItems(lang:zh) {
                     id
                     shortName
                   }
-                  lootContainers {
+                  lootContainers(lang:zh) {
                     id
                     normalizedName
                     name
                   }
-                  tasks {
+                  tasks(lang:zh) {
                     id
                     name
                     kappaRequired

@@ -1,4 +1,4 @@
-﻿using SkiaSharp;
+using SkiaSharp;
 using System.IO;
 using System.Reflection;
 
@@ -28,22 +28,22 @@ namespace eft_dma_shared.Common.Misc
             try
             {
                 byte[] fontFamilyRegular, fontFamilyBold, fontFamilyItalic, fontFamilyMedium;
-                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("eft_dma_shared.NeoSansStdRegular.otf"))
+                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("eft_dma_shared.Fonts.NotoSerifCJKsc-Regular.otf"))
                 {
                     fontFamilyRegular = new byte[stream!.Length];
                     stream.ReadExactly(fontFamilyRegular);
                 }
-                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("eft_dma_shared.NeoSansStdBold.otf"))
+                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("eft_dma_shared.Fonts.NotoSerifCJKsc-Bold.otf"))
                 {
                     fontFamilyBold = new byte[stream!.Length];
                     stream.ReadExactly(fontFamilyBold);
                 }
-                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("eft_dma_shared.NeoSansStdItalic.otf"))
+                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("eft_dma_shared.Fonts.NotoSerifCJKsc-Regular.otf")) // Using Regular as Italic fallback
                 {
                     fontFamilyItalic = new byte[stream!.Length];
                     stream.ReadExactly(fontFamilyItalic);
                 }
-                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("eft_dma_shared.NeoSansStdMedium.otf"))
+                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("eft_dma_shared.Fonts.NotoSerifCJKsc-Medium.otf"))
                 {
                     fontFamilyMedium = new byte[stream!.Length];
                     stream.ReadExactly(fontFamilyMedium);

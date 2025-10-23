@@ -1,4 +1,4 @@
-﻿using eft_dma_radar.Tarkov.Loot;
+using eft_dma_radar.Tarkov.Loot;
 using eft_dma_radar.UI.LootFilters;
 using eft_dma_radar.UI.Misc;
 using eft_dma_shared.Common.Misc;
