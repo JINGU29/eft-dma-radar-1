@@ -29,6 +29,12 @@ namespace eft_dma_radar.UI.ESP
             Minimized = minimized;
             _padding = 6f * scale;
             SetScaleFactor(scale);
+            
+            // Validate Chinese font support on initialization
+            if (!ValidateChineseTextSupport())
+            {
+                System.Diagnostics.Debug.WriteLine("Warning: Chinese font support validation failed in ESPQuestInfoWidget");
+            }
         }
 
         public override void SetScaleFactor(float scale)
@@ -557,6 +563,39 @@ namespace eft_dma_radar.UI.ESP
             return Math.Max(10, maxChars);
         }
 
+        /// <summary>
+        /// Validates Chinese text rendering capabilities
+        /// </summary>
+        private bool ValidateChineseTextSupport()
+        {
+            try
+            {
+                // Test common Chinese characters, punctuation, and special symbols
+                var testTexts = new[]
+                {
+                    "任务目标：击杀敌人",
+                    "区域标记：工厂、海关、森林",
+                    "物品收集：找到钥匙、文件、装备",
+                    "特殊字符：①②③④⑤⑥⑦⑧⑨⑩",
+                    "标点符号：，。！？；：\"\"''（）【】",
+                    "数字混合：完成 5/10 个任务目标"
+                };
+
+                foreach (var text in testTexts)
+                {
+                    var width = _questTextPaint.MeasureText(text);
+                    if (width <= 0)
+                        return false;
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         #region Static Paint Objects
         private static readonly SKPaint _questTextPaint = new()
         {
@@ -566,8 +605,10 @@ namespace eft_dma_radar.UI.ESP
             TextSize = 13,
             TextEncoding = SKTextEncoding.Utf8,
             IsAntialias = true,
-            Typeface = SKTypeface.FromFamilyName("Consolas"),
-            FilterQuality = SKFilterQuality.High
+            Typeface = CustomFonts.SKFontFamilyRegular,
+            FilterQuality = SKFilterQuality.High,
+            HintingLevel = SKPaintHinting.Full,
+            LcdRenderText = true
         };
 
         private static readonly SKPaint _questKeyPaint = new()
@@ -578,8 +619,10 @@ namespace eft_dma_radar.UI.ESP
             TextSize = 13,
             TextEncoding = SKTextEncoding.Utf8,
             IsAntialias = true,
-            Typeface = SKTypeface.FromFamilyName("Consolas"),
-            FilterQuality = SKFilterQuality.High
+            Typeface = CustomFonts.SKFontFamilyRegular,
+            FilterQuality = SKFilterQuality.High,
+            HintingLevel = SKPaintHinting.Full,
+            LcdRenderText = true
         };
 
         private static readonly SKPaint _questCompletedPaint = new()
@@ -590,8 +633,10 @@ namespace eft_dma_radar.UI.ESP
             TextSize = 13,
             TextEncoding = SKTextEncoding.Utf8,
             IsAntialias = true,
-            Typeface = SKTypeface.FromFamilyName("Consolas"),
-            FilterQuality = SKFilterQuality.High
+            Typeface = CustomFonts.SKFontFamilyRegular,
+            FilterQuality = SKFilterQuality.High,
+            HintingLevel = SKPaintHinting.Full,
+            LcdRenderText = true
         };
 
         private static readonly SKPaint _questIncompletePaint = new()
@@ -602,8 +647,10 @@ namespace eft_dma_radar.UI.ESP
             TextSize = 13,
             TextEncoding = SKTextEncoding.Utf8,
             IsAntialias = true,
-            Typeface = SKTypeface.FromFamilyName("Consolas"),
-            FilterQuality = SKFilterQuality.High
+            Typeface = CustomFonts.SKFontFamilyRegular,
+            FilterQuality = SKFilterQuality.High,
+            HintingLevel = SKPaintHinting.Full,
+            LcdRenderText = true
         };
 
         private static readonly SKPaint _questNamePaint = new()
@@ -614,8 +661,10 @@ namespace eft_dma_radar.UI.ESP
             TextSize = 13,
             TextEncoding = SKTextEncoding.Utf8,
             IsAntialias = true,
-            Typeface = SKTypeface.FromFamilyName("Consolas"),
-            FilterQuality = SKFilterQuality.High
+            Typeface = CustomFonts.SKFontFamilyMedium,
+            FilterQuality = SKFilterQuality.High,
+            HintingLevel = SKPaintHinting.Full,
+            LcdRenderText = true
         };
 
         private static readonly SKPaint _questItemPaint = new()
@@ -626,8 +675,10 @@ namespace eft_dma_radar.UI.ESP
             TextSize = 13,
             TextEncoding = SKTextEncoding.Utf8,
             IsAntialias = true,
-            Typeface = SKTypeface.FromFamilyName("Consolas"),
-            FilterQuality = SKFilterQuality.High
+            Typeface = CustomFonts.SKFontFamilyRegular,
+            FilterQuality = SKFilterQuality.High,
+            HintingLevel = SKPaintHinting.Full,
+            LcdRenderText = true
         };
 
         private static readonly SKPaint _questOptionalPaint = new()
@@ -638,8 +689,10 @@ namespace eft_dma_radar.UI.ESP
             TextSize = 13,
             TextEncoding = SKTextEncoding.Utf8,
             IsAntialias = true,
-            Typeface = SKTypeface.FromFamilyName("Consolas"),
-            FilterQuality = SKFilterQuality.High
+            Typeface = CustomFonts.SKFontFamilyRegular,
+            FilterQuality = SKFilterQuality.High,
+            HintingLevel = SKPaintHinting.Full,
+            LcdRenderText = true
         };
 
         private static readonly SKPaint _questStrikethroughPaint = new()
